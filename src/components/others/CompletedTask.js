@@ -10,14 +10,14 @@ const CompletedTask = () => {
 
     const { data: tasks, isLoading, isError, refetch } = useQuery({
         queryKey: ['tasks'],
-        queryFn: () => fetch(`http://localhost:4000/completedtasks?email=${user.email}`)
+        queryFn: () => fetch(`https://demotaskserver.vercel.app/completedtasks?email=${user.email}`)
             .then(res => res.json())
     })
 
     const handleDelete = (id, refetch) => {
         const agree = window.confirm(`Are you sure to delete?`);
         if (agree) {
-          fetch(`http://localhost:4000/deletetask/${id}`, {
+          fetch(`https://demotaskserver.vercel.app/deletetask/${id}`, {
             method: 'DELETE'
           })
             .then(res => res.json())

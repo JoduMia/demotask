@@ -35,7 +35,7 @@ const AddTask = () => {
             image: gotData.data.url,
           };
 
-          fetch('http://localhost:4000/addtask', {
+          fetch('https://demotaskserver.vercel.app/addtask', {
             method:'POST',
             headers: {
               'content-type': 'application/json'

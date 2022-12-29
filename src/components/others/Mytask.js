@@ -12,13 +12,13 @@ const Mytask = () => {
 
     const { data: tasks, isLoading, isError, refetch } = useQuery({
         queryKey: ['tasks'],
-        queryFn: () => fetch(`http://localhost:4000/tasks?email=${user.email}`)
+        queryFn: () => fetch(`https://demotaskserver.vercel.app/tasks?email=${user.email}`)
             .then(res => res.json())
     })
 
 
       const update = (id, refetch) => {
-          fetch(`http://localhost:4000/update/${id}`, {
+          fetch(`https://demotaskserver.vercel.app/update/${id}`, {
             method: 'PATCH'
           })
             .then(res => res.json())
