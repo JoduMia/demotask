@@ -5,8 +5,10 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 import Loader from '../shared/Loader';
+import { useNavigate } from 'react-router-dom';
 
 const AddTask = () => {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const {user} = useContext(AuthContext);
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -45,6 +47,7 @@ const AddTask = () => {
             if(data.acknowledged){
               setLoading(false);
               toast.success('Task Added Successfully');
+              navigate('/mytask')
             }
           })
         }

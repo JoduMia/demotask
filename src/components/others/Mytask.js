@@ -2,11 +2,13 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react'
 import { useContext } from 'react'
 import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider'
 import Loader from '../shared/Loader';
 
 const Mytask = () => {
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const { data: tasks, isLoading, isError, refetch } = useQuery({
         queryKey: ['tasks'],
@@ -22,8 +24,9 @@ const Mytask = () => {
             .then(res => res.json())
             .then(data => {
               if (data.modifiedCount > 0) {
+                  refetch();
+                  navigate('/completedtasks')
                 toast.success('Successfully Completed');
-                refetch();
               }
             })
       };
@@ -48,6 +51,9 @@ const Mytask = () => {
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
+                    <th scope="col" class="py-3 px-6">
+                            Media
+                        </th>
                         <th scope="col" class="py-3 px-6">
                             Task name
                         </th>
@@ -71,6 +77,10 @@ const Mytask = () => {
 
                             return (
                                 <tr key={_id} class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <td class="py-4 px-6">
+                                    <img class="w-10 h-10 rounded-full" src={image} alt='imagee' />
+                                    </td>
+
                                     <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                         {task}
                                     </th>

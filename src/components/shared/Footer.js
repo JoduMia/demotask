@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="mb-6 md:mb-0">
           <a href="https://Eduvite.com/" className="flex items-center">
             <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-8" alt="Eduvite Logo"/>
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Eduvite</span>
+              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Scheduler</span>
           </a>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -16,7 +16,7 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">UGC Convocation</h2>
             <ul className="text-gray-600 dark:text-gray-400">
               <li className="mb-4">
-                <a href="https://Eduvite.com/" className="hover:underline">Eduvite</a>
+                <a href="https://Eduvite.com/" className="hover:underline">Scheduler</a>
               </li>
               <li>
                 <a href="/" className="hover:underline">Alumnai</a>
