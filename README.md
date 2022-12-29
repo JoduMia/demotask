@@ -1,8 +1,8 @@
 * Project name:
 # Scheduler
 
-Firebase hosting live site Link [Eduvite | Vast Your Skill](https://eduvite-assignment10.web.app).
+Firebase hosting live site Link [Scheduler](https://demotask-69335.web.app/).
 
-Server side code Link [Eduvite | Vast Your Skill](https://assignment10-server-seven.vercel.app/datas).
+Server side code Link [](https://demotaskserver.vercel.app/).
 
 
